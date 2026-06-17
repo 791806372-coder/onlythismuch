@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "device": {
+    "id": "mac-stable-id",
+    "name": "Kai's Mac",
+    "platform": "macOS",
+    "connectorVersion": "0.1.0",
+    "online": true,
+    "updatedAt": "2026-06-11T19:30:00+08:00"
+  },
+  "providers": [
+    {
+      "id": "claude",
+      "displayName": "Claude",
+      "connected": true,
+      "health": "working",
+      "version": "2.1.170",
+      "usage": {
+        "available": false,
+        "reason": "no_stable_source"
+      }
+    },
+    {
+      "id": "codex",
+      "displayName": "Codex",
+      "connected": true,
+      "health": "working",
+      "version": "0.139.0",
+      "capturedAt": "2026-06-11T19:29:41+08:00",
+      "usage": {
+        "available": true,
+        "source": "codexbar",
+        "sourceVersion": "1.0.0",
+        "fiveHourRemainingPercent": 85,
+        "fiveHourResetAt": "2026-06-11T20:30:00+08:00",
+        "weeklyRemainingPercent": 27,
+        "weeklyResetAt": "2026-06-11T21:45:00+08:00"
+      }
+    }
+  ]
+}

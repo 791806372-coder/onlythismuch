@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Scan the pairing QR code shown by the Mac connector.";
+"NSLocalNetworkUsageDescription" = "Connect to the paired Mac connector on your local Wi-Fi to refresh usage snapshots.";

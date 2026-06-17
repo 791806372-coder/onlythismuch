@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed-dim": "#cec6ad",
+                  "on-surface": "#e5e2e1",
+                  "inverse-surface": "#e5e2e1",
+                  "surface-container-high": "#2a2a2a",
+                  "on-background": "#e5e2e1",
+                  "inverse-primary": "#ad3225",
+                  "on-tertiary": "#35301e",
+                  "on-secondary-fixed-variant": "#00513d",
+                  "surface-container-lowest": "#0e0e0e",
+                  "on-secondary-container": "#003024",
+                  "on-error": "#690005",
+                  "on-error-container": "#ffdad6",
+                  "primary": "#ffb4a8",
+                  "on-tertiary-fixed-variant": "#4c4733",
+                  "primary-fixed": "#ffdad5",
+                  "surface": "#131313",
+                  "error": "#ffb4ab",
+                  "surface-tint": "#ffb4a8",
+                  "surface-container": "#201f1f",
+                  "primary-container": "#ff6d5a",
+                  "tertiary-fixed": "#ebe2c8",
+                  "inverse-on-surface": "#313030",
+                  "on-secondary": "#00382a",
+                  "outline": "#a88a85",
+                  "on-tertiary-container": "#373321",
+                  "on-surface-variant": "#e0bfba",
+                  "outline-variant": "#59413d",
+                  "secondary-fixed": "#7ff8cf",
+                  "on-primary-fixed-variant": "#8b1910",
+                  "on-secondary-fixed": "#002117",
+                  "secondary-fixed-dim": "#61dbb4",
+                  "surface-container-highest": "#353534",
+                  "on-primary-fixed": "#410000",
+                  "surface-container-low": "#1c1b1b",
+                  "on-tertiary-fixed": "#1f1c0b",
+                  "secondary-container": "#12a480",
+                  "secondary": "#61dbb4",
+                  "on-primary-container": "#6e0001",
+                  "surface-bright": "#3a3939",
+                  "on-primary": "#690001",
+                  "surface-variant": "#353534",
+                  "tertiary-container": "#a29b83",
+                  "surface-dim": "#131313",
+                  "primary-fixed-dim": "#ffb4a8",
+                  "error-container": "#93000a",
+                  "background": "#131313",
+                  "tertiary": "#cec6ad"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-desktop": "40px",
+                  "margin-mobile": "20px",
+                  "container-max": "1200px",
+                  "gutter": "16px",
+                  "unit": "4px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Geist"],
+                  "headline-lg-mobile": ["Geist"],
+                  "body-md": ["Geist"],
+                  "headline-lg": ["Geist"],
+                  "label-mono": ["Space Mono"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "headline-lg-mobile": ["26px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                  "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                  "label-mono": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Geist', sans-serif;
+    }
+    .widget-container {
+      width: 329px; /* iOS Medium Widget Width approx */
+      height: 155px; /* iOS Medium Widget Height approx */
+      aspect-ratio: 2.12 / 1;
+    }
+    .glass-effect {
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(19, 19, 19, 0.9) 100%);
+      box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.12), 0 4px 24px -2px rgba(0, 0, 0, 0.5);
+    }
+    .inner-glow-border {
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .usage-track {
+      background: #000000;
+      height: 4px;
+      border-radius: 99px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-black">
+<div class="widget-container relative glass-effect rounded-[24px] p-4 flex flex-col overflow-hidden">
+<div class="inner-glow-border"></div>
+<!-- Top Bar -->
+<header class="flex justify-between items-center mb-3">
+<h1 class="font-headline-md text-[13px] text-on-surface-variant flex items-center gap-1">
+        Fine, here's only this much <span class="text-[11px]">🤏</span>
+</h1>
+<button class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center bg-white/5 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-[14px] text-on-surface">refresh</span>
+</button>
+</header>
+<!-- Content Grid -->
+<main class="grid grid-cols-2 gap-x-4 flex-grow">
+<!-- Claude Column -->
+<section class="flex flex-col gap-2">
+<div class="inline-flex items-center justify-center px-3 py-0.5 bg-primary-container rounded-full w-fit">
+<span class="text-[10px] font-bold text-on-primary-container tracking-tight">CLAUDE</span>
+</div>
+<div class="space-y-1.5 mt-1">
+<!-- Meter 1 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[9px] text-on-surface-variant/60">5h</span>
+<span class="font-label-mono text-[10px] text-secondary font-bold">82%</span>
+</div>
+<div class="usage-track">
+<div class="h-full bg-secondary" style="width: 82%;"></div>
+</div>
+<span class="font-label-mono text-[8px] text-secondary/70">Satiated</span>
+</div>
+<!-- Meter 2 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[9px] text-on-surface-variant/60">wk</span>
+<span class="font-label-mono text-[10px] text-secondary font-bold">44%</span>
+</div>
+<div class="usage-track">
+<div class="h-full bg-secondary" style="width: 44%;"></div>
+</div>
+<span class="font-label-mono text-[8px] text-secondary/70">Stable</span>
+</div>
+</div>
+</section>
+<!-- Codex Column -->
+<section class="flex flex-col gap-2">
+<div class="inline-flex items-center justify-center px-3 py-0.5 bg-secondary-container rounded-full w-fit">
+<span class="text-[10px] font-bold text-on-secondary-container tracking-tight">CODEX.IO</span>
+</div>
+<div class="space-y-1.5 mt-1">
+<!-- Meter 1 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[9px] text-on-surface-variant/60">5h</span>
+<span class="font-label-mono text-[10px] text-primary font-bold">8%</span>
+</div>
+<div class="usage-track">
+<div class="h-full bg-primary" style="width: 8%;"></div>
+</div>
+<span class="font-label-mono text-[8px] text-primary">Starving</span>
+</div>
+<!-- Meter 2 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[9px] text-on-surface-variant/60">wk</span>
+<span class="font-label-mono text-[10px] text-secondary font-bold">12%</span>
+</div>
+<div class="usage-track">
+<div class="h-full bg-secondary" style="width: 12%;"></div>
+</div>
+<span class="font-label-mono text-[8px] text-secondary/70">Dying</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-auto pt-1 flex justify-center">
+<p class="font-label-mono text-[8px] text-white/20 tracking-wider">Touched Mac · hot😏</p>
+</footer>
+<!-- Background Atmospheric Glow -->
+<div class="absolute -bottom-12 -right-12 w-32 h-32 bg-secondary/5 rounded-full blur-[40px] pointer-events-none"></div>
+<div class="absolute -top-12 -left-12 w-32 h-32 bg-primary/5 rounded-full blur-[40px] pointer-events-none"></div>
+</div>
+<script>
+    // Micro-interaction for the refresh button
+    const refreshBtn = document.querySelector('button');
+    const refreshIcon = refreshBtn.querySelector('.material-symbols-outlined');
+    
+    refreshBtn.addEventListener('click', () => {
+      refreshIcon.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      refreshIcon.style.transform = 'rotate(180deg)';
+      
+      setTimeout(() => {
+        refreshIcon.style.transition = 'none';
+        refreshIcon.style.transform = 'rotate(0deg)';
+      }, 500);
+    });
+
+    // Add subtle parallax-ish tilt effect on hover for desktop
+    const widget = document.querySelector('.widget-container');
+    widget.addEventListener('mousemove', (e) => {
+      const rect = widget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+      
+      widget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    widget.addEventListener('mouseleave', () => {
+      widget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      widget.style.transition = 'transform 0.5s ease';
+    });
+
+    widget.addEventListener('mouseenter', () => {
+      widget.style.transition = 'none';
+    });
+  </script>
+</body></html>

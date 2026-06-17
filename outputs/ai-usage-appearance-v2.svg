@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1300" viewBox="0 0 900 1300">
+  <defs>
+    <radialGradient id="bg" cx="36%" cy="10%" r="96%">
+      <stop offset="0" stop-color="#d8e7f0"/>
+      <stop offset="0.34" stop-color="#9fb6c1"/>
+      <stop offset="0.72" stop-color="#526b76"/>
+      <stop offset="1" stop-color="#26343c"/>
+    </radialGradient>
+    <linearGradient id="softPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,.42)"/>
+      <stop offset=".48" stop-color="rgba(255,255,255,.18)"/>
+      <stop offset="1" stop-color="rgba(15,26,34,.22)"/>
+    </linearGradient>
+    <linearGradient id="selectedPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,.52)"/>
+      <stop offset=".58" stop-color="rgba(255,255,255,.22)"/>
+      <stop offset="1" stop-color="rgba(36,67,82,.30)"/>
+    </linearGradient>
+    <linearGradient id="liquidChip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,.72)"/>
+      <stop offset=".5" stop-color="rgba(197,216,229,.42)"/>
+      <stop offset="1" stop-color="rgba(96,120,132,.36)"/>
+    </linearGradient>
+    <linearGradient id="classicChip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38393b"/>
+      <stop offset=".54" stop-color="#202226"/>
+      <stop offset="1" stop-color="#111317"/>
+    </linearGradient>
+    <linearGradient id="classicWidget" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26272b"/>
+      <stop offset="1" stop-color="#121316"/>
+    </linearGradient>
+    <linearGradient id="liquidWidget" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="rgba(255,255,255,.38)"/>
+      <stop offset=".42" stop-color="rgba(42,58,66,.52)"/>
+      <stop offset="1" stop-color="rgba(16,23,28,.64)"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#0b151d" flood-opacity=".24"/>
+      <feDropShadow dx="0" dy="1" stdDeviation=".4" flood-color="#ffffff" flood-opacity=".34"/>
+    </filter>
+    <filter id="innerGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="-1" stdDeviation="1" flood-color="#ffffff" flood-opacity=".38"/>
+    </filter>
+    <style>
+      .font { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Apple Color Emoji", sans-serif; }
+      .white { fill: #f7fbff; }
+      .dim { fill: rgba(247,251,255,.74); }
+      .muted { fill: rgba(247,251,255,.56); }
+      .dark { fill: #101318; }
+      .orange { fill: #ff8751; }
+      .green { fill: #38d464; }
+    </style>
+  </defs>
+
+  <rect width="900" height="1300" fill="url(#bg)"/>
+  <g opacity=".18">
+    <ellipse cx="250" cy="158" rx="210" ry="140" fill="#ffffff"/>
+    <ellipse cx="710" cy="1160" rx="280" ry="190" fill="#0d1820"/>
+    <ellipse cx="130" cy="900" rx="260" ry="210" fill="#d5bd91"/>
+  </g>
+
+  <text x="42" y="105" class="font white" font-size="42" font-weight="780">Appearance / 外观</text>
+
+  <!-- Liquid Glass option -->
+  <g transform="translate(24 160)" filter="url(#shadow)">
+    <rect width="852" height="404" rx="42" fill="url(#selectedPanel)" stroke="#4da1ff" stroke-width="4"/>
+    <rect x="2" y="2" width="848" height="400" rx="40" fill="none" stroke="rgba(255,255,255,.48)" stroke-width="1.2"/>
+    <circle cx="784" cy="70" r="50" fill="#3488ff"/>
+    <text x="760" y="88" class="font white" font-size="52" font-weight="760">✓</text>
+
+    <g transform="translate(285 64)" filter="url(#innerGlow)">
+      <rect width="282" height="212" rx="54" fill="url(#liquidChip)" stroke="rgba(255,255,255,.56)" stroke-width="2"/>
+      <path d="M28 26 C92 2 178 12 238 34" fill="none" stroke="rgba(255,255,255,.58)" stroke-width="2" opacity=".65"/>
+      <rect x="42" y="58" width="198" height="90" rx="28" fill="url(#liquidWidget)" stroke="rgba(255,255,255,.35)"/>
+      <text x="58" y="91" class="font white" font-size="17" font-weight="780">别问了还剩这么点🤏</text>
+      <text x="58" y="124" class="font orange" font-size="18" font-weight="780">Claude</text>
+      <rect x="58" y="136" width="74" height="5" rx="2.5" fill="rgba(255,255,255,.36)"/>
+      <rect x="58" y="136" width="16" height="5" rx="2.5" fill="#ff8751"/>
+      <text x="152" y="124" class="font green" font-size="18" font-weight="780">Codex</text>
+      <rect x="152" y="136" width="74" height="5" rx="2.5" fill="rgba(255,255,255,.36)"/>
+      <rect x="152" y="136" width="69" height="5" rx="2.5" fill="#38d464"/>
+    </g>
+    <text x="426" y="322" class="font white" font-size="42" font-weight="720" text-anchor="middle">Liquid Glass</text>
+    <text x="426" y="368" class="font dim" font-size="32" font-weight="680" text-anchor="middle">液态玻璃</text>
+  </g>
+
+  <!-- Classic option -->
+  <g transform="translate(24 620)" filter="url(#shadow)">
+    <rect width="852" height="404" rx="42" fill="url(#softPanel)" stroke="rgba(255,255,255,.50)" stroke-width="3"/>
+    <rect x="2" y="2" width="848" height="400" rx="40" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
+
+    <g transform="translate(285 64)" filter="url(#innerGlow)">
+      <rect width="282" height="212" rx="54" fill="url(#classicChip)" stroke="rgba(255,255,255,.16)" stroke-width="2"/>
+      <rect x="42" y="58" width="198" height="90" rx="28" fill="url(#classicWidget)" stroke="rgba(255,255,255,.14)"/>
+      <text x="58" y="91" class="font white" font-size="17" font-weight="780">别问了还剩这么点🤏</text>
+      <text x="58" y="124" class="font orange" font-size="18" font-weight="780">Claude</text>
+      <rect x="58" y="136" width="74" height="5" rx="2.5" fill="rgba(255,255,255,.28)"/>
+      <rect x="58" y="136" width="16" height="5" rx="2.5" fill="#ff8751"/>
+      <text x="152" y="124" class="font green" font-size="18" font-weight="780">Codex</text>
+      <rect x="152" y="136" width="74" height="5" rx="2.5" fill="rgba(255,255,255,.28)"/>
+      <rect x="152" y="136" width="69" height="5" rx="2.5" fill="#38d464"/>
+    </g>
+    <text x="426" y="322" class="font white" font-size="42" font-weight="720" text-anchor="middle">Classic</text>
+    <text x="426" y="368" class="font dim" font-size="32" font-weight="680" text-anchor="middle">经典</text>
+  </g>
+
+  <text x="72" y="1112" class="font dim" font-size="32" font-weight="650">可随时在设置中切换外观。</text>
+
+</svg>

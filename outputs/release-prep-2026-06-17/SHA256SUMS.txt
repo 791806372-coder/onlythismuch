@@ -1,0 +1,1 @@
+56743b4b086b74b76799d092592856c821ad97e27b92f55c9a578d9fa90f9857  outputs/release-prep-2026-06-17/AIUsageConnector-mac-adhoc-0.1.0.zip

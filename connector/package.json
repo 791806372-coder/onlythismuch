@@ -1,0 +1,25 @@
+{
+  "name": "ai-usage-widget-connector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mac LAN connector for the AI Usage Widget proof of concept.",
+  "type": "commonjs",
+  "bin": {
+    "aiuw": "dist/connector/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/connector/test/*.test.js",
+    "start:mock": "node dist/connector/src/cli.js start --mock ../fixtures/normal.json --port 8787"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

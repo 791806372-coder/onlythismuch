@@ -1,0 +1,56 @@
+# Release Commands
+
+## Build / Verify iOS Locally
+
+```sh
+npm run check:product
+npm run check:ios-config
+npm run check:ios
+npm run build:ios:tests
+npm run check:appintents:fresh
+```
+
+## Build / Verify Mac Connector Locally
+
+```sh
+npm run mac:verify
+codesign --verify --deep --strict --verbose=2 mac/AIUsageConnector/dist/AIUsageConnector.app
+```
+
+## Build Mac Connector With Developer ID Later
+
+```sh
+AIUW_CODESIGN_IDENTITY="Developer ID Application: <Name> (<TEAMID>)" npm run mac:verify
+```
+
+Then zip, notarize, staple, and checksum.
+
+## Create Zip
+
+```sh
+ditto -c -k --keepParent mac/AIUsageConnector/dist/AIUsageConnector.app outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip
+shasum -a 256 outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip > outputs/release-prep-2026-06-17/SHA256SUMS.txt
+```
+
+## Notarization Shape
+
+```sh
+xcrun notarytool submit outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip \
+  --keychain-profile "<profile>" \
+  --wait
+
+xcrun stapler staple mac/AIUsageConnector/dist/AIUsageConnector.app
+spctl -a -vv mac/AIUsageConnector/dist/AIUsageConnector.app
+```
+
+## iOS Archive Shape
+
+Use Xcode once Apple Distribution signing exists:
+
+1. Open `ios/AIUsageWidget.xcodeproj`.
+2. Select scheme `AIUsageWidgetApp`.
+3. Select `Any iOS Device`.
+4. Product -> Archive.
+5. Distribute App -> App Store Connect.
+
+CLI archive can be added after the App Store profiles are present locally.

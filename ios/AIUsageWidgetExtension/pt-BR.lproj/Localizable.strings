@@ -1,0 +1,12 @@
+"widget.configuration.name" = "AI Usage";
+"widget.configuration.description" = "Veja o uso de Claude / Codex pelo Mac pareado.";
+"intent.configuration.description" = "Escolha qual medidor de uso aparece neste widget.";
+"intent.provider.type" = "Provedor";
+"intent.provider.parameter" = "Provedor";
+"intent.provider.both" = "Claude + Codex";
+"intent.refreshUsage.title" = "Toca no Mac";
+"intent.toggleProvider.title" = "Trocar provedor";
+"intent.swapProviders.title" = "Trocar colunas";
+"intent.approvalDecision.title" = "Gerenciar aprovação";
+"intent.approvalDecision.requestId" = "ID da solicitação";
+"intent.approvalDecision.action" = "Ação";

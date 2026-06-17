@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#ffb4a8",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#61dbb4",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#a29b83",
+                        "on-secondary": "#00382a",
+                        "on-primary-fixed-variant": "#8b1910",
+                        "on-primary-container": "#6e0001",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#4c4733",
+                        "on-primary": "#690001",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed": "#410000",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-secondary-container": "#003024",
+                        "primary": "#ffb4a8",
+                        "inverse-primary": "#ad3225",
+                        "tertiary-fixed": "#ebe2c8",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#cec6ad",
+                        "tertiary": "#cec6ad",
+                        "secondary-container": "#12a480",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "on-surface-variant": "#e0bfba",
+                        "on-tertiary-fixed": "#1f1c0b",
+                        "on-secondary-fixed": "#002117",
+                        "outline-variant": "#59413d",
+                        "on-secondary-fixed-variant": "#00513d",
+                        "secondary-fixed": "#7ff8cf",
+                        "surface": "#131313",
+                        "secondary": "#61dbb4",
+                        "primary-fixed": "#ffdad5",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#ff6d5a",
+                        "on-tertiary": "#35301e",
+                        "outline": "#a88a85",
+                        "on-error": "#690005",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#373321",
+                        "surface-dim": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "40px",
+                        "container-max": "1200px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "headline-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["26px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0D0D0D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Geist', sans-serif;
+        }
+        .widget-canvas {
+            width: 329px;
+            height: 155px;
+            background-color: #1A1A1A;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 28px; /* Standard iOS Medium Widget Radius */
+        }
+        .glass-mist {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .inner-stroke {
+            box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.15);
+        }
+        .usage-track {
+            background: #000000;
+            height: 4px;
+            border-radius: 2px;
+            width: 100%;
+        }
+        .usage-fill-primary {
+            background: #ff6d5a; /* Claude Coral */
+        }
+        .usage-fill-secondary {
+            background: #12a480; /* Codex Green */
+        }
+        .capsule-active {
+            transition: transform 0.1s ease;
+        }
+        .capsule-active:active {
+            transform: scale(0.96);
+        }
+    </style>
+</head>
+<body class="dark">
+<div class="widget-canvas p-4 flex flex-col justify-between">
+<!-- Header Row -->
+<div class="flex justify-between items-start">
+<h1 class="font-headline-md text-on-surface text-[13px] leading-tight max-w-[70%] opacity-90">
+                Fine, here's only this much 🤏
+            </h1>
+<button class="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center bg-white/5 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">refresh</span>
+</button>
+</div>
+<!-- Main Content: Two Columns -->
+<div class="grid grid-cols-2 gap-4 mt-2">
+<!-- Left Column: Claude -->
+<div class="space-y-2">
+<div class="capsule-active flex items-center gap-2 bg-[#ff6d5a] px-2 py-1 rounded-full w-fit">
+<span class="font-label-mono text-[9px] text-on-primary-container font-bold uppercase tracking-wider">Claude</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[11px] text-on-surface">5h 84%</span>
+<span class="font-label-mono text-[9px] text-primary/60 uppercase">Satiated</span>
+</div>
+<div class="usage-track overflow-hidden">
+<div class="usage-fill-primary h-full rounded-full" style="width: 84%"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Codex -->
+<div class="space-y-2">
+<div class="capsule-active flex items-center gap-2 bg-[#12a480] px-2 py-1 rounded-full w-fit">
+<span class="font-label-mono text-[9px] text-on-secondary-container font-bold uppercase tracking-wider">Codex</span>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-end">
+<span class="font-label-mono text-[11px] text-on-surface">wk 77%</span>
+<span class="font-label-mono text-[9px] text-secondary/60 uppercase">Stable</span>
+</div>
+<div class="usage-track overflow-hidden">
+<div class="usage-fill-secondary h-full rounded-full" style="width: 77%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Row -->
+<div class="flex justify-between items-center mt-auto pt-1">
+<button class="font-label-mono text-[10px] text-outline hover:text-on-surface transition-colors">
+                Reset
+            </button>
+<span class="font-label-mono text-[9px] text-surface-variant italic">
+                Touched Mac · hot😏
+            </span>
+</div>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.capsule-active').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.opacity = '0.7';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.opacity = '1';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.opacity = '1';
+            });
+        });
+
+        // Mock refresh animation
+        const refreshBtn = document.querySelector('button span');
+        refreshBtn.parentElement.addEventListener('click', () => {
+            refreshBtn.classList.add('animate-spin');
+            setTimeout(() => {
+                refreshBtn.classList.remove('animate-spin');
+            }, 800);
+        });
+    </script>
+<style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</body></html>

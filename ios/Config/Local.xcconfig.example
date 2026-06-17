@@ -1,0 +1,8 @@
+// Copy to Config/Local.xcconfig for local signing values.
+// Config/Local.xcconfig is intentionally ignored.
+// DEVELOPMENT_TEAM is the 10-character Team ID from Xcode Settings > Accounts.
+// For a free Apple account, use the Personal Team shown by Xcode.
+
+DEVELOPMENT_TEAM =
+PRODUCT_BUNDLE_IDENTIFIER_PREFIX = com.kai
+APP_GROUP_IDENTIFIER = group.com.kai.aiusagewidget

@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "用來掃描 Mac 連接器顯示的配對 QR Code。";
+"NSLocalNetworkUsageDescription" = "用來連接同一 Wi-Fi 下已配對的 Mac 連接器，並重新整理用量快照。";

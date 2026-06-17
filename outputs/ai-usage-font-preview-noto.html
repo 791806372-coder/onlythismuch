@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Usage Font Preview - Noto Sans SC</title>
+  <style>
+    @font-face {
+      font-family: "Noto Sans SC";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("https://fonts.gstatic.com/s/notosanssc/v40/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_FnYw.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Noto Sans SC";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("https://fonts.gstatic.com/s/notosanssc/v40/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaGwHCnYw.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Noto Sans SC";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url("https://fonts.gstatic.com/s/notosanssc/v40/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaGzjCnYw.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Noto Sans SC";
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      src: url("https://fonts.gstatic.com/s/notosanssc/v40/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG1_CnYw.ttf") format("truetype");
+    }
+    :root {
+      --bg0: #e7eff2;
+      --bg1: #bcccd2;
+      --bg2: #61747b;
+      --ink: #101619;
+      --mist: rgba(247,251,252,.72);
+      --muted: rgba(247,251,252,.50);
+      --line: rgba(255,255,255,.14);
+      --panel: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.07) 45%, rgba(8,13,16,.14));
+      --dark: linear-gradient(135deg, #232a2e, #15191c 56%, #0f1214);
+      --orange: #ff8751;
+      --green: #39d468;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      width: 1600px;
+      height: 1000px;
+      overflow: hidden;
+      font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Apple Color Emoji", sans-serif;
+      background:
+        radial-gradient(780px 290px at 70% 7%, rgba(255,255,255,.56), transparent 70%),
+        radial-gradient(760px 300px at 20% 92%, rgba(20,32,38,.24), transparent 68%),
+        linear-gradient(135deg, var(--bg0), var(--bg1) 42%, var(--bg2));
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+    .title {
+      position: absolute;
+      left: 54px;
+      top: 42px;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .sub {
+      position: absolute;
+      left: 54px;
+      top: 88px;
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(16,22,25,.62);
+    }
+    .phone {
+      position: absolute;
+      border-radius: 78px;
+      background: #0c1013;
+      box-shadow: 0 30px 60px rgba(8,16,20,.3);
+    }
+    .home {
+      left: 54px;
+      top: 128px;
+      width: 690px;
+      height: 812px;
+      padding: 17px;
+    }
+    .app {
+      left: 805px;
+      top: 132px;
+      width: 400px;
+      height: 812px;
+      padding: 10px;
+      border-radius: 54px;
+    }
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 64px;
+      background: linear-gradient(135deg, #172025, #29363b 48%, #0f1518);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .app .screen { border-radius: 45px; }
+    .island {
+      position: absolute;
+      left: 283px;
+      top: 31px;
+      width: 126px;
+      height: 39px;
+      border-radius: 999px;
+      background: #050607;
+    }
+    .time {
+      position: absolute;
+      left: 94px;
+      top: 55px;
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .status {
+      position: absolute;
+      right: 65px;
+      top: 57px;
+      color: white;
+      font-size: 23px;
+      font-weight: 700;
+    }
+    .widget {
+      position: absolute;
+      width: 542px;
+      height: 272px;
+      border-radius: 36px;
+      padding: 10px;
+      background: var(--panel);
+      border: 1.4px solid rgba(255,255,255,.24);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.22);
+    }
+    .home .widget { left: 74px; top: 120px; }
+    .widget-core {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 29px;
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,.1);
+      overflow: hidden;
+    }
+    .widget-title {
+      position: absolute;
+      left: 28px;
+      top: 25px;
+      color: white;
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .fresh {
+      position: absolute;
+      right: 44px;
+      top: 18px;
+      padding: 8px 16px;
+      border-radius: 18px;
+      color: #dbe1e4;
+      font-size: 14px;
+      font-weight: 700;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+      white-space: nowrap;
+    }
+    .refresh {
+      position: absolute;
+      right: 16px;
+      top: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 21px;
+      font-weight: 700;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .divider {
+      position: absolute;
+      left: 270px;
+      top: 76px;
+      bottom: 30px;
+      width: 1px;
+      background: rgba(255,255,255,.15);
+    }
+    .provider {
+      position: absolute;
+      top: 76px;
+      width: 214px;
+      height: 170px;
+    }
+    .provider.left { left: 30px; }
+    .provider.right { left: 300px; }
+    .provider-name {
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .claude { color: var(--orange); }
+    .codex { color: var(--green); }
+    .row {
+      position: relative;
+      height: 65px;
+      color: white;
+    }
+    .row-label {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(247,251,252,.92);
+    }
+    .percent {
+      position: absolute;
+      right: 10px;
+      top: -6px;
+      font-size: 30px;
+      font-weight: 800;
+      color: white;
+      font-variant-numeric: tabular-nums;
+    }
+    .bar {
+      position: absolute;
+      left: 0;
+      right: 18px;
+      top: 31px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.24);
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+    }
+    .reset {
+      position: absolute;
+      left: 0;
+      top: 47px;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(247,251,252,.48);
+    }
+    .appname {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 412px;
+      text-align: center;
+      color: white;
+      font-size: 21px;
+      font-weight: 700;
+    }
+    .mini-row {
+      position: absolute;
+      left: 74px;
+      top: 520px;
+      display: flex;
+      gap: 18px;
+    }
+    .mini {
+      width: 132px;
+      height: 132px;
+      border-radius: 28px;
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,.13);
+      padding: 17px;
+      color: white;
+      overflow: hidden;
+    }
+    .mini h4 {
+      margin: 0 0 18px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .mini .big {
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .mini .small {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .app-title {
+      position: absolute;
+      left: 38px;
+      top: 41px;
+      color: white;
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .pill {
+      position: absolute;
+      right: 24px;
+      top: 28px;
+      height: 38px;
+      padding: 0 20px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .mac-row {
+      position: absolute;
+      left: 32px;
+      top: 108px;
+      width: 336px;
+      height: 66px;
+      border-radius: 22px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 15px 26px;
+      color: white;
+    }
+    .mac-row .dot {
+      position: absolute;
+      left: 20px;
+      top: 28px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #35cf62;
+    }
+    .mac-row .name {
+      margin-left: 28px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .mac-row .addr {
+      margin-left: 28px;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .app-widget {
+      transform: scale(.62);
+      transform-origin: top left;
+      left: 32px !important;
+      top: 202px !important;
+    }
+    .cards {
+      position: absolute;
+      left: 32px;
+      top: 400px;
+      display: flex;
+      gap: 20px;
+    }
+    .card {
+      width: 158px;
+      height: 174px;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 22px;
+      color: white;
+    }
+    .card h3 {
+      margin: 0 0 30px;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .card .card-row {
+      position: relative;
+      height: 50px;
+      font-size: 18px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+    .card .card-pct {
+      position: absolute;
+      right: 0;
+      top: -5px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .card .card-bar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 9px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.22);
+    }
+    .button {
+      position: absolute;
+      left: 32px;
+      top: 604px;
+      width: 336px;
+      height: 58px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 19px;
+      font-weight: 800;
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 110px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .mac {
+      position: absolute;
+      left: 1244px;
+      top: 198px;
+      width: 298px;
+      height: 238px;
+      border-radius: 28px;
+      padding: 24px;
+      background: linear-gradient(135deg, #eef4f5, #c7d4d8);
+      border: 1px solid rgba(255,255,255,.66);
+      box-shadow: 0 18px 35px rgba(8,16,20,.17);
+    }
+    .mac h3 {
+      margin: 0 0 28px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .mac-status {
+      height: 58px;
+      border-radius: 18px;
+      padding: 12px 20px 12px 50px;
+      background: rgba(255,255,255,.35);
+      border: 1px solid rgba(255,255,255,.64);
+      position: relative;
+    }
+    .mac-status::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #35cf62;
+    }
+    .font-panel {
+      position: absolute;
+      left: 1244px;
+      top: 486px;
+      width: 298px;
+      height: 230px;
+      border-radius: 28px;
+      padding: 24px;
+      background: rgba(19,28,33,.72);
+      border: 1px solid rgba(255,255,255,.16);
+      color: white;
+      box-shadow: 0 18px 35px rgba(8,16,20,.17);
+    }
+    .font-panel h3 {
+      margin: 0 0 22px;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .spec {
+      margin: 0 0 13px;
+      color: var(--mist);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .spec strong { color: white; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <div class="title">AI Usage · Font Direction</div>
+  <div class="sub">Recommended stack: Noto Sans SC for CJK/product voice, tabular numerals for meters, system emoji fallback.</div>
+
+  <div class="phone home">
+    <div class="screen">
+      <div class="island"></div>
+      <div class="time">09:41</div>
+      <div class="status">▮▮▮ Wi‑Fi</div>
+      <section class="widget">
+        <div class="widget-core">
+          <div class="widget-title">别问了还剩这么点🤏</div>
+          <div class="fresh">摸到了，刚刷新😏</div>
+          <div class="refresh">↻</div>
+          <div class="divider"></div>
+          <div class="provider left">
+            <div class="provider-name claude">Claude</div>
+            <div class="row">
+              <div class="row-label">5h</div><div class="percent">3%</div>
+              <div class="bar"><div class="fill" style="width:3%;background:var(--orange)"></div></div>
+              <div class="reset">22:06 恢复</div>
+            </div>
+            <div class="row">
+              <div class="row-label">周</div><div class="percent">0%</div>
+              <div class="bar"><div class="fill" style="width:0%;background:var(--orange)"></div></div>
+              <div class="reset">6月16日 恢复</div>
+            </div>
+          </div>
+          <div class="provider right">
+            <div class="provider-name codex">Codex</div>
+            <div class="row">
+              <div class="row-label">5h</div><div class="percent">99%</div>
+              <div class="bar"><div class="fill" style="width:99%;background:var(--green)"></div></div>
+              <div class="reset">22:06 恢复</div>
+            </div>
+            <div class="row">
+              <div class="row-label">周</div><div class="percent">94%</div>
+              <div class="bar"><div class="fill" style="width:94%;background:var(--green)"></div></div>
+              <div class="reset">6月16日 恢复</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="appname">AI Usage</div>
+      <div class="mini-row">
+        <div class="mini"><h4>别问了还剩这么点🤏</h4><div class="big claude">Claude</div><div class="small">5h · 80%</div></div>
+        <div class="mini"><h4>别问了还剩这么点🤏</h4><div class="big">用量装神秘🙄</div><div class="small">官方又藏了</div></div>
+        <div class="mini"><h4>别问了还剩这么点🤏</h4><div class="big">摸 Mac 中...🫳</div><div class="small">别催，在路上</div></div>
+        <div class="mini"><h4>别问了还剩这么点🤏</h4><div class="big">Mac 装睡了💤</div><div class="small">留着上次读数</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phone app">
+    <div class="screen">
+      <div class="app-title">AI Usage</div>
+      <div class="pill">语言</div>
+      <div class="mac-row">
+        <div class="dot"></div>
+        <div class="name">Kaide MacBook Pro · 在线</div>
+        <div class="addr">局域网 192.168.1.23:8787</div>
+      </div>
+      <section class="widget app-widget">
+        <div class="widget-core">
+          <div class="widget-title">别问了还剩这么点🤏</div>
+          <div class="fresh">摸到了，刚刷新😏</div>
+          <div class="divider"></div>
+          <div class="provider left">
+            <div class="provider-name claude">Claude</div>
+            <div class="row"><div class="row-label">5h</div><div class="percent">3%</div><div class="bar"><div class="fill" style="width:3%;background:var(--orange)"></div></div></div>
+            <div class="row"><div class="row-label">周</div><div class="percent">0%</div><div class="bar"></div></div>
+          </div>
+          <div class="provider right">
+            <div class="provider-name codex">Codex</div>
+            <div class="row"><div class="row-label">5h</div><div class="percent">99%</div><div class="bar"><div class="fill" style="width:99%;background:var(--green)"></div></div></div>
+            <div class="row"><div class="row-label">周</div><div class="percent">94%</div><div class="bar"><div class="fill" style="width:94%;background:var(--green)"></div></div></div>
+          </div>
+        </div>
+      </section>
+      <div class="cards">
+        <div class="card">
+          <h3 class="claude">Claude</h3>
+          <div class="card-row">5h <span class="card-pct">3%</span><span class="card-bar"><span class="fill" style="display:block;width:3%;background:var(--orange)"></span></span></div>
+          <div class="card-row">周 <span class="card-pct">0%</span><span class="card-bar"></span></div>
+        </div>
+        <div class="card">
+          <h3 class="codex">Codex</h3>
+          <div class="card-row">5h <span class="card-pct">99%</span><span class="card-bar"><span class="fill" style="display:block;width:99%;background:var(--green)"></span></span></div>
+          <div class="card-row">周 <span class="card-pct">94%</span><span class="card-bar"><span class="fill" style="display:block;width:94%;background:var(--green)"></span></span></div>
+        </div>
+      </div>
+      <div class="button">↻ 刷新 Usage</div>
+      <div class="bottom"><span>▦<br>概览</span><span>↺<br>历史</span><span>⚙<br>设置</span></div>
+    </div>
+  </div>
+
+  <section class="mac">
+    <h3>AI Usage 连接器</h3>
+    <div class="mac-status">
+      <strong>已连接</strong><br>
+      <span style="color:rgba(16,22,25,.64);font-size:13px;font-weight:600">iPhone 已通过局域网连接</span>
+    </div>
+    <div style="display:flex;gap:16px;margin-top:20px">
+      <div style="flex:1;border-radius:17px;background:rgba(255,255,255,.34);padding:14px 16px;font-size:13px;font-weight:700"><span class="claude">Claude</span><br>5h 3%</div>
+      <div style="flex:1;border-radius:17px;background:rgba(255,255,255,.34);padding:14px 16px;font-size:13px;font-weight:700"><span class="codex">Codex</span><br>5h 99%</div>
+    </div>
+  </section>
+
+  <section class="font-panel">
+    <h3>Recommended Font</h3>
+    <p class="spec"><strong>Noto Sans SC</strong></p>
+    <p class="spec">Better CJK consistency than Latin-only display fonts.</p>
+    <p class="spec">Open-source bundle path for iOS/macOS.</p>
+    <p class="spec">Use tabular numerals for 3%, 99%, reset times.</p>
+  </section>
+</body>
+</html>

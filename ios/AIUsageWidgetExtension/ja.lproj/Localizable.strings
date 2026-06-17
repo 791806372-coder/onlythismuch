@@ -1,0 +1,12 @@
+"widget.configuration.name" = "AI Usage";
+"widget.configuration.description" = "ペアリング済みMacからClaude / Codexの使用状況を確認します。";
+"intent.configuration.description" = "このウィジェットに表示する使用メーターを選びます。";
+"intent.provider.type" = "プロバイダー";
+"intent.provider.parameter" = "表示するもの";
+"intent.provider.both" = "Claude + Codex";
+"intent.refreshUsage.title" = "Macをなでる";
+"intent.toggleProvider.title" = "プロバイダーを切り替え";
+"intent.swapProviders.title" = "Claude / Codex の位置を入れ替え";
+"intent.approvalDecision.title" = "承認を処理";
+"intent.approvalDecision.requestId" = "リクエストID";
+"intent.approvalDecision.action" = "操作";

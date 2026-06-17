@@ -1,0 +1,12 @@
+"widget.configuration.name" = "AI Usage";
+"widget.configuration.description" = "查看已配对 Mac 同步的 Claude / Codex 用量。";
+"intent.configuration.description" = "选择这个小组件显示哪份用量。";
+"intent.provider.type" = "服务";
+"intent.provider.parameter" = "显示服务";
+"intent.provider.both" = "Claude + Codex";
+"intent.refreshUsage.title" = "抚摸 Mac";
+"intent.toggleProvider.title" = "切换服务";
+"intent.swapProviders.title" = "交换 Claude / Codex 位置";
+"intent.approvalDecision.title" = "处理审批";
+"intent.approvalDecision.requestId" = "请求 ID";
+"intent.approvalDecision.action" = "动作";

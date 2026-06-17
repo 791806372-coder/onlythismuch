@@ -1,0 +1,2 @@
+"NSCameraUsageDescription" = "Macコネクタに表示されたペアリングQRコードをスキャンします。";
+"NSLocalNetworkUsageDescription" = "同じWi-Fi上のペアリング済みMacコネクタに接続して、使用状況のスナップショットを更新します。";

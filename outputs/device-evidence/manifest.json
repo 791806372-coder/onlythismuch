@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "requiredScreenshots": [
+    {
+      "filename": "01-app-group-proof.png",
+      "label": "App Group proof widget header",
+      "expectedEvidence": "Medium widget header shows ✓ Proof HH:mm:ss after tapping 写入测试字符串."
+    },
+    {
+      "filename": "02-qr-pairing.png",
+      "label": "QR/manual pairing screen",
+      "expectedEvidence": "App shows the Mac pairing is saved after QR scan or manual JSON paste, with host count/port only and no raw LAN host or token."
+    },
+    {
+      "filename": "03-lan-cache.png",
+      "label": "App-side LAN cache",
+      "expectedEvidence": "App shows successful 测试连接, LAN · 刚刚 cache, and no token or raw host in diagnostics."
+    },
+    {
+      "filename": "04-widget-lan.png",
+      "label": "Widget LAN diagnostic or widget-lan header",
+      "expectedEvidence": "After 关闭证明模式, Widget shows Widget LAN or app Widget LAN 诊断 shows Widget 摸到了 plus approval sync, with no token/host/URL/body."
+    },
+    {
+      "filename": "05-offline-stale.png",
+      "label": "Offline/stale last-known state",
+      "expectedEvidence": "Widget shows Mac 摆烂了💤 or 旧账别太信🧊 while preserving last-known safe values."
+    },
+    {
+      "filename": "06-final-widget.png",
+      "label": "Final widget screenshot",
+      "expectedEvidence": "Medium widget matches the two-column Claude/Codex direction with header 别问了还剩这么点🤏, and small widget can show one selected provider."
+    },
+    {
+      "filename": "07-widget-tap-refresh.png",
+      "label": "Widget tap opens app refresh route",
+      "expectedEvidence": "After tapping the widget, the app opens and shows the Widget 喊你... refresh prompt."
+    },
+    {
+      "filename": "08-approval-pending.png",
+      "label": "Approval pending widget buttons",
+      "expectedEvidence": "After npm run connector:approvals:seed and app 从 Mac 拉请求, Widget shows approve/deny controls for the Mac request."
+    },
+    {
+      "filename": "09-approval-decision.png",
+      "label": "Approval decision reached Mac",
+      "expectedEvidence": "App/widget clears only after paired Mac receipt; npm run connector:approvals output is saved or checked with bounded id/action."
+    },
+    {
+      "filename": "10-local-network-permission.png",
+      "label": "iOS Local Network permission",
+      "expectedEvidence": "iOS Local Network permission prompt is accepted, or Settings shows AI Usage Local Network enabled before LAN proof."
+    },
+    {
+      "filename": "11-approval-app-diagnostic.png",
+      "label": "App approval diagnostic",
+      "expectedEvidence": "快速批准 shows App 上次 diagnostic after paired app approve/deny, with Mac 已收 or safe failure detail and no token/host/URL/body."
+    },
+    {
+      "filename": "12-approval-widget-diagnostic.png",
+      "label": "Widget approval diagnostic",
+      "expectedEvidence": "快速批准 shows Widget 上次 diagnostic after Widget approve/deny AppIntent, with Mac 已收 or safe failure detail and no token/host/URL/body."
+    }
+  ]
+}
