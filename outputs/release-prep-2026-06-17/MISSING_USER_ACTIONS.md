@@ -1,36 +1,42 @@
 # Missing User Actions
 
-## Must Do Before App Store Upload
+## Must Do Before App Store Submission
 
-1. Create the App Store Connect app record.
-   - Platform: iOS
-   - Name: AI Usage
-   - Primary language: English, unless you want Simplified Chinese first.
+1. Wait for Apple to finish build processing.
+   - App Store Connect app record exists.
+   - App Store name: `AI Widget Usage`
    - Bundle ID: `com.superzhangkai.aiusagewidget`
    - SKU: `ai-usage-ios-001`
+   - Uploaded build: version `1.0`, build `2`
 
-2. Create App Store signing profiles for archive/upload.
-   - Personal Apple Developer certificates now exist locally: Apple Development, Apple Distribution, Developer ID Application, and Developer ID Installer.
-   - Xcode still needs App Store distribution provisioning profiles for the app and widget extension.
-   - Use the personal Apple Developer team only.
-
-3. Confirm App Group capability in Apple Developer.
+2. Confirm App Group capability in Apple Developer if App Store processing flags it.
    - App Group: `group.com.superzhangkai.aiusagewidget`
    - App: `com.superzhangkai.aiusagewidget`
    - Widget: `com.superzhangkai.aiusagewidget.widget`
 
-4. Provide public URLs.
+3. Provide public URLs.
    - Privacy Policy URL
    - Support URL
    - Mac connector download URL
 
-5. Provide screenshots.
+4. Provide screenshots.
    - iPhone 6.9-inch screenshots for the App Store listing.
-   - Recommended surfaces: onboarding, paired dashboard, widget on Home Screen, language/settings screen.
+   - Put the `骚话` dashboard/widget screenshots first.
+   - Recommended order: paired dashboard, medium widget, small widget, language/settings, then onboarding/pairing.
+   - Current local candidates:
+     - `outputs/app-store-screenshots/01-sao-dashboard-en.png`
+     - `outputs/app-store-screenshots/04-first-run-mac-connector-en.png`
+   - Still needed: clean Home Screen widget screenshots, preferably from the real iPhone.
 
-6. Decide launch regions.
+5. Fill App Store metadata and privacy answers.
+   - Description, keywords, support URL, privacy URL, category, age rating, app privacy.
+   - App review contact information.
+   - Review notes explaining that the Mac connector is required for live usage.
+
+6. Decide launch regions and release behavior.
    - Recommended v1: regions outside Mainland China first.
    - Keep zh-Hans/zh-Hant localization available, but do not promise Mainland China support until the download/distribution path is settled.
+   - Recommended first release behavior: manual release after approval.
 
 ## Must Do Before Public Mac Connector Download
 
@@ -45,6 +51,7 @@
 3. Notarize and staple.
    - Use `xcrun notarytool` with App Store Connect credentials or a key.
    - Staple the accepted ticket before publishing.
+   - Current local state: `AIUsageNotary` is not saved in Keychain yet.
 
 4. Publish the connector.
    - Recommended: GitHub Release first.

@@ -11,6 +11,11 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
 
 ## Generated Artifacts
 
+- `build/AppStoreArchive/export/AIUsageWidgetApp.ipa`
+  - iOS App Store Connect export.
+  - Version `1.0`, build `2`.
+  - Signed with `Apple Distribution: Kai Zhang (5MXZ674CA6)`.
+  - Uploaded successfully to App Store Connect on 2026-06-17; wait for Apple processing before selecting it on the version page.
 - `AIUsageConnector-mac-adhoc-0.1.0.zip`
   - Current Mac connector bundle, ad-hoc signed.
   - Use for private/internal validation only.
@@ -38,13 +43,20 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
   - Things only you/account owner can do.
 - `LOCAL_CHECK_REPORT.md`
   - Checks I ran tonight and their result.
+- `../app-store-screenshots/`
+  - App Store screenshot candidates.
+  - Current usable English candidates:
+    - `01-sao-dashboard-en.png`
+    - `04-first-run-mac-connector-en.png`
+  - The gallery should lead with the `骚话` usage/dashboard/widget screenshots, then show setup.
 
 ## What Changed In App Code
 
+- iOS marketing version is now `1.0` to match the App Store Connect version record.
 - iPhone first-run pairing now includes a Mac connector install guidance card before the QR scan card.
 - Mac connector bundle assembly now re-signs the complete `.app` bundle by default with ad-hoc signing.
 - The same Mac packaging script can later use Developer ID signing by setting `AIUW_CODESIGN_IDENTITY`.
 
 ## Release Stance
 
-The iOS app now development-signs and installs on the connected iPhone with the personal Apple Developer team. App Store upload still needs the App Store Connect record, App Store provisioning profiles for the app/widget, a Release archive, and listing assets. The Mac connector can be Developer ID signed locally, but public download still requires notarization credentials, stapling, and a GitHub Release asset.
+The iOS app now installs on the connected iPhone, archives as version `1.0` build `2`, exports as an App Store Connect IPA, and uploads successfully to App Store Connect. The remaining iOS release work is App Store Connect listing metadata, App Store screenshots, app privacy, review contact info, build selection after Apple processing, and final submission. Screenshot order should lead with the playful usage/dashboard/widget surfaces, not a plain setup intro. The Mac connector can be Developer ID signed locally, but public download still requires notarization credentials, stapling, and a GitHub Release asset.

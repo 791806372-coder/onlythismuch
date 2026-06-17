@@ -2,7 +2,7 @@
 
 ## Name
 
-AI Usage
+AI Widget Usage
 
 ## Subtitle
 
@@ -10,11 +10,11 @@ Claude and Codex usage widgets
 
 ## Promotional Text
 
-Pair your iPhone with a Mac connector and keep Claude/Codex usage on your Home Screen without logging into provider accounts inside the app.
+Fine, here's only this much. Put Claude/Codex usage on your Home Screen with a local Mac connector.
 
 ## Description
 
-AI Usage is a local-first iPhone app and WidgetKit widget for people who want a quick glance at Claude and Codex usage.
+AI Widget Usage is a local-first iPhone app and WidgetKit widget for people who want a quick glance at Claude and Codex usage. The in-app name is AI Usage.
 
 Install the Mac connector, pair your iPhone by scanning a QR code, then add the widget to your Home Screen. The widget can show Claude, Codex, or both, with last-known values when the Mac is offline.
 
@@ -35,6 +35,18 @@ Supported languages:
 ## Keywords
 
 AI usage, widget, Claude, Codex, usage tracker, productivity, WidgetKit
+
+## Screenshot Direction
+
+Use the playful usage screen first. The App Store gallery should sell the mood:
+
+1. `Fine, here's only this much 🤏` dashboard with Claude/Codex.
+2. Medium Home Screen widget with the same playful header.
+3. Small single-provider widget.
+4. Settings/language/provider choice.
+5. Mac connector setup guidance.
+
+The setup story matters, but it should not be the first impression.
 
 ## Support URL
 

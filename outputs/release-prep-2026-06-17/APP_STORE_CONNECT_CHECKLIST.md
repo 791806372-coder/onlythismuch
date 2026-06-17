@@ -2,7 +2,8 @@
 
 ## App Information
 
-- Name: `AI Usage`
+- App Store name: `AI Widget Usage`
+- In-app display name: `AI Usage`
 - Bundle ID: `com.superzhangkai.aiusagewidget`
 - SKU: `ai-usage-ios-001`
 - Category: Productivity
@@ -22,11 +23,12 @@
 - Archive scheme: `AIUsageWidgetApp`
 - App target: `AIUsageWidgetApp`
 - Widget extension target: `AIUsageWidgetExtension`
-- Version: `0.1.0`
+- Version: `1.0`
 - Build: `2`
-- Required before upload:
-  - App Store provisioning profiles for app and widget
-  - App Group enabled for both bundle IDs
+- Upload:
+  - `build/AppStoreArchive/export/AIUsageWidgetApp.ipa`
+  - Uploaded successfully to App Store Connect on 2026-06-17.
+  - Wait for Apple processing before selecting the build on the version page.
 
 ## Privacy
 
@@ -47,12 +49,25 @@
 
 ## Screenshots Needed
 
-- First launch pairing guidance.
-- QR pairing screen or manual pairing screen.
-- Paired dashboard with Claude/Codex cards.
-- Medium widget on Home Screen.
-- Small widget on Home Screen.
-- Language/settings screen.
+Lead with the funny product surface, not the setup explanation. The first screenshots should make people understand the attitude immediately.
+
+Recommended order:
+
+1. Paired dashboard with the playful headline and Claude/Codex usage cards.
+   - Use the `骚话` surface first.
+   - Candidate file: `outputs/app-store-screenshots/01-sao-dashboard-en.png`
+2. Medium widget on Home Screen.
+   - Show the playful header plus both providers.
+   - This should be the strongest feature screenshot.
+3. Small widget on Home Screen.
+   - Show the single-provider mode and refresh icon.
+4. Language/settings screen.
+   - Show language picker plus Claude/Codex display options.
+5. First launch pairing guidance.
+   - Candidate file: `outputs/app-store-screenshots/04-first-run-mac-connector-en.png`
+6. QR pairing screen or manual pairing screen.
+
+For localized App Store pages, repeat the same order. Do not put a plain Mac-connector intro as screenshot 1.
 
 ## External URLs Needed
 
