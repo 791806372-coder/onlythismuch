@@ -342,7 +342,8 @@ function assertInstallableDeviceProduct() {
   }
 }
 
-function buildForDevice() {
+function buildForDevice(deviceSelector) {
+  const destination = deviceSelector ? `id=${deviceSelector}` : "generic/platform=iOS";
   const commandArgs = [
     "-project",
     "ios/AIUsageWidget.xcodeproj",
@@ -353,7 +354,7 @@ function buildForDevice() {
     "-configuration",
     "Debug",
     "-destination",
-    `generic/platform=iOS`,
+    destination,
     "-derivedDataPath",
     "build/DerivedData",
     "-destination-timeout",
@@ -412,13 +413,13 @@ function installOnDevice(deviceSelector) {
 }
 
 assertPrerequisites();
+const deviceSelector = args.install ? findDeviceSelector() : undefined;
 if (!args.skipBuild) {
-  buildForDevice();
+  buildForDevice(deviceSelector);
 } else {
   assertInstallableDeviceProduct();
 }
 if (args.install) {
-  const deviceSelector = findDeviceSelector();
   installOnDevice(deviceSelector);
 } else {
   console.log("Device build/check completed. Install was not requested.");

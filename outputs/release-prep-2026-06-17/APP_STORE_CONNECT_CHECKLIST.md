@@ -3,7 +3,7 @@
 ## App Information
 
 - Name: `AI Usage`
-- Bundle ID: `com.kai.aiusagewidget`
+- Bundle ID: `com.superzhangkai.aiusagewidget`
 - SKU: `ai-usage-ios-001`
 - Category: Productivity
 - Content rights: owns/has rights to app content
@@ -24,8 +24,7 @@
 - Widget extension target: `AIUsageWidgetExtension`
 - Version: `0.1.0`
 - Build: `2`
-- Required local signing before upload:
-  - Apple Distribution certificate
+- Required before upload:
   - App Store provisioning profiles for app and widget
   - App Group enabled for both bundle IDs
 

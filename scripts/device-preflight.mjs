@@ -203,7 +203,7 @@ async function checkSigning() {
   if (config.PRODUCT_BUNDLE_IDENTIFIER_PREFIX) {
     pass("Bundle prefix", config.PRODUCT_BUNDLE_IDENTIFIER_PREFIX);
   } else {
-    fail("Bundle prefix", "empty", "Set a reverse-DNS prefix you can sign, for example com.kai.");
+    fail("Bundle prefix", "empty", "Set a reverse-DNS prefix you can sign, for example com.superzhangkai.");
   }
 
   if (config.APP_GROUP_IDENTIFIER?.startsWith("group.")) {

@@ -1,6 +1,6 @@
 # AI Usage App Store Readiness
 
-Updated: 2026-06-15
+Updated: 2026-06-17
 
 ## Decision
 
@@ -11,15 +11,16 @@ Updated: 2026-06-15
 ## Current Local Status
 
 - Apple Developer Program should be used through the personal Apple ID only.
-- Local config points to the intended personal team, but local signing identities need to be regenerated after removing the old company-email certificate.
+- Local config points to the intended personal team.
+- Local personal signing identities are available for Apple Development, Apple Distribution, Developer ID Application, and Developer ID Installer.
 - The wired iPhone has been visible to Xcode/CoreDevice during local checks.
-- A development build has installed successfully to the iPhone before the certificate reset.
-- App Store upload still needs Apple Distribution signing / archive setup.
+- A development build installed successfully to the connected iPhone on 2026-06-17.
+- App Store upload still needs App Store Connect app setup, App Store provisioning profiles, and a Release archive/upload.
 - Native iOS app + WidgetKit extension exist.
 - Bundle ids are configured from `PRODUCT_BUNDLE_IDENTIFIER_PREFIX`:
-  - App: `com.kai.aiusagewidget`
-  - Widget: `com.kai.aiusagewidget.widget`
-- App Group is configured as `group.com.kai.aiusagewidget`.
+  - App: `com.superzhangkai.aiusagewidget`
+  - Widget: `com.superzhangkai.aiusagewidget.widget`
+- App Group is configured as `group.com.superzhangkai.aiusagewidget`.
 - App and widget entitlements both use `$(APP_GROUP_IDENTIFIER)`.
 - `PrivacyInfo.xcprivacy` exists for app and widget.
 - App privacy manifest currently declares:
@@ -47,18 +48,17 @@ Updated: 2026-06-15
 ## App Store Connect Checklist
 
 1. Apple Developer Program
-   - Current local goal: regenerate signing from the personal Apple Developer account.
    - Confirm `ios/Config/Local.xcconfig` points to the intended personal Apple Developer team.
-   - Add Apple Distribution signing before TestFlight/App Store upload.
+   - Keep only the personal Apple Developer team for this project.
 
 2. Identifiers and capabilities
-   - Register app id: `com.kai.aiusagewidget`.
-   - Register widget id: `com.kai.aiusagewidget.widget`.
-   - Register App Group: `group.com.kai.aiusagewidget`.
+   - Register app id: `com.superzhangkai.aiusagewidget`.
+   - Register widget id: `com.superzhangkai.aiusagewidget.widget`.
+   - Register App Group: `group.com.superzhangkai.aiusagewidget`.
    - Enable App Groups on both app id and widget id.
 
 3. Signing profiles
-   - Create/download Apple Distribution signing in Xcode.
+   - Create/download App Store distribution provisioning profiles for the app and widget.
    - Archive with Release signing.
    - Upload from Xcode Organizer or App Store Connect tooling.
 

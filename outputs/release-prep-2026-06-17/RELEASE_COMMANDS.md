@@ -17,10 +17,10 @@ npm run mac:verify
 codesign --verify --deep --strict --verbose=2 mac/AIUsageConnector/dist/AIUsageConnector.app
 ```
 
-## Build Mac Connector With Developer ID Later
+## Build Mac Connector With Developer ID
 
 ```sh
-AIUW_CODESIGN_IDENTITY="Developer ID Application: <Name> (<TEAMID>)" npm run mac:verify
+AIUW_CODESIGN_IDENTITY="Developer ID Application: Kai Zhang (5MXZ674CA6)" npm run mac:verify
 ```
 
 Then zip, notarize, staple, and checksum.
@@ -45,7 +45,7 @@ spctl -a -vv mac/AIUsageConnector/dist/AIUsageConnector.app
 
 ## iOS Archive Shape
 
-Use Xcode once Apple Distribution signing exists:
+Use Xcode with the personal Apple Distribution signing identity and App Store profiles:
 
 1. Open `ios/AIUsageWidget.xcodeproj`.
 2. Select scheme `AIUsageWidgetApp`.

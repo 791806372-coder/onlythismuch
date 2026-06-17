@@ -30,7 +30,7 @@ struct AppGroupIdentifierResolution: Equatable {
 }
 
 enum AppGroup {
-    static let fallbackIdentifier = "group.com.kai.aiusagewidget"
+    static let fallbackIdentifier = "group.com.superzhangkai.aiusagewidget"
     static let proofKey = "aiuw.appGroupProof"
     static let proofModeKey = "aiuw.appGroupProofMode"
     static let cachedSnapshotKey = "aiuw.cachedSnapshot"

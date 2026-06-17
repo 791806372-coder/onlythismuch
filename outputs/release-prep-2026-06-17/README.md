@@ -17,6 +17,11 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
   - Not ready for public GitHub release until Developer ID signing + notarization are done.
 - `SHA256SUMS.txt`
   - Checksum for the zip.
+- `AIUsageConnector-mac-developerid-notarization-pending-0.1.0.zip`
+  - Developer ID signed Mac connector bundle.
+  - Generated for notarization input only; not ready for public release until accepted and stapled.
+- `SHA256SUMS-developerid-pending.txt`
+  - Checksum for the Developer ID signed, not-yet-notarized zip.
 - `APP_STORE_CONNECT_CHECKLIST.md`
   - What to fill in App Store Connect.
 - `APP_STORE_METADATA_DRAFT.md`
@@ -42,4 +47,4 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
 
 ## Release Stance
 
-The iOS app is close to App Store packaging, but not upload-ready from this machine yet because Apple Distribution signing is missing locally. The Mac connector is locally valid as a bundle, but public download requires Developer ID signing and notarization.
+The iOS app now development-signs and installs on the connected iPhone with the personal Apple Developer team. App Store upload still needs the App Store Connect record, App Store provisioning profiles for the app/widget, a Release archive, and listing assets. The Mac connector can be Developer ID signed locally, but public download still requires notarization credentials, stapling, and a GitHub Release asset.

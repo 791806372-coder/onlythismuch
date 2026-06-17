@@ -6,19 +6,18 @@
    - Platform: iOS
    - Name: AI Usage
    - Primary language: English, unless you want Simplified Chinese first.
-   - Bundle ID: `com.kai.aiusagewidget`
+   - Bundle ID: `com.superzhangkai.aiusagewidget`
    - SKU: `ai-usage-ios-001`
 
-2. Create or download Apple Distribution signing.
-   - The previous company-email development certificate was removed from this Mac.
-   - Create new signing certificates from the personal Apple Developer account.
-   - I did not find an Apple Distribution identity locally.
-   - Xcode needs to archive with an App Store distribution profile for the app and widget extension.
+2. Create App Store signing profiles for archive/upload.
+   - Personal Apple Developer certificates now exist locally: Apple Development, Apple Distribution, Developer ID Application, and Developer ID Installer.
+   - Xcode still needs App Store distribution provisioning profiles for the app and widget extension.
+   - Use the personal Apple Developer team only.
 
 3. Confirm App Group capability in Apple Developer.
-   - App Group: `group.com.kai.aiusagewidget`
-   - App: `com.kai.aiusagewidget`
-   - Widget: `com.kai.aiusagewidget.widget`
+   - App Group: `group.com.superzhangkai.aiusagewidget`
+   - App: `com.superzhangkai.aiusagewidget`
+   - Widget: `com.superzhangkai.aiusagewidget.widget`
 
 4. Provide public URLs.
    - Privacy Policy URL
@@ -35,7 +34,8 @@
 
 ## Must Do Before Public Mac Connector Download
 
-1. Create a Developer ID Application certificate.
+1. Use the Developer ID Application certificate.
+   - The personal Developer ID Application identity is now available locally.
    - Needed for a direct-download Mac app outside the Mac App Store.
 
 2. Sign the Mac app with Developer ID.
@@ -48,8 +48,8 @@
 
 4. Publish the connector.
    - Recommended: GitHub Release first.
-   - The current workspace has been initialized as a git repo and pointed at the GitHub repo.
-   - Push/release upload still depends on GitHub CLI/SSH/HTTPS authentication.
+   - The current workspace is pushed to the GitHub repo.
+   - Public release upload should wait for a notarized Developer ID zip.
 
 ## Optional But Useful
 

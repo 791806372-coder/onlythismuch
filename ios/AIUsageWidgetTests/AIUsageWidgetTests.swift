@@ -642,9 +642,9 @@ final class AppGroupIdentifierTests: XCTestCase {
             .fallbackInvalidInfoPlist
         )
         XCTAssertEqual(
-            AppGroup.resolveIdentifier(rawValue: " group.com.kai.aiusagewidget "),
+            AppGroup.resolveIdentifier(rawValue: " group.com.superzhangkai.aiusagewidget "),
             AppGroupIdentifierResolution(
-                identifier: "group.com.kai.aiusagewidget",
+                identifier: "group.com.superzhangkai.aiusagewidget",
                 source: .infoPlist
             )
         )

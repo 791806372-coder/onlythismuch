@@ -641,11 +641,11 @@ struct ValidateFixtures {
         guard AppGroup.resolveIdentifier(rawValue: "$(APP_GROUP_IDENTIFIER)").source == .fallbackUnexpandedInfoPlist else {
             throw FixtureValidationFailure.widgetRefreshCoordinatorFailed
         }
-        guard AppGroup.resolveIdentifier(rawValue: "com.kai.not-a-group").source == .fallbackInvalidInfoPlist else {
+        guard AppGroup.resolveIdentifier(rawValue: "com.superzhangkai.not-a-group").source == .fallbackInvalidInfoPlist else {
             throw FixtureValidationFailure.widgetRefreshCoordinatorFailed
         }
-        guard AppGroup.resolveIdentifier(rawValue: " group.com.kai.aiusagewidget ") == AppGroupIdentifierResolution(
-            identifier: "group.com.kai.aiusagewidget",
+        guard AppGroup.resolveIdentifier(rawValue: " group.com.superzhangkai.aiusagewidget ") == AppGroupIdentifierResolution(
+            identifier: "group.com.superzhangkai.aiusagewidget",
             source: .infoPlist
         ) else {
             throw FixtureValidationFailure.widgetRefreshCoordinatorFailed

@@ -51,7 +51,7 @@ AI Usage Connector pairs your Mac with the AI Usage iPhone app and WidgetKit wid
 
 ## GitHub Upload Path
 
-This workspace is now initialized as a git repo and points at the GitHub repository. Public release upload should wait until the Mac app is signed with Developer ID and notarized; pushing/uploading still depends on GitHub CLI, SSH, or HTTPS authentication.
+This workspace is now pushed to the GitHub repository. Public release upload should wait until the Mac app is signed with Developer ID, notarized, and stapled.
 
 Once a repo exists and GitHub CLI is authenticated, the command shape is:
 

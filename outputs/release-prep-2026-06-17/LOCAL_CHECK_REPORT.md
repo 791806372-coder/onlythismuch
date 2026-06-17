@@ -31,29 +31,37 @@ Run date: 2026-06-17
 - Mac bundle code signature verification:
   - `codesign --verify --deep --strict --verbose=2 mac/AIUsageConnector/dist/AIUsageConnector.app`
   - Passed after adding bundle signing to the Mac build script.
+- Personal Apple signing diagnosis: `npm run device:signing`
+  - Passed with warnings only.
+- Physical iPhone install: `npm run device:install -- --allow-provisioning-updates`
+  - Installed `AIUsageWidgetApp` on the connected iPhone.
+- Developer ID Mac signing: `AIUW_CODESIGN_IDENTITY="Developer ID Application: Kai Zhang (5MXZ674CA6)" npm run mac:verify`
+  - Signed `AIUsageConnector.app` with Developer ID Application.
 
 ## Failed / Blocked
 
-- Signing diagnosis: `npm run device:signing`
-  - `xctrace` did not list the iPhone.
-  - The iPhone may need unlock/trust/reconnect/Xcode Devices visibility before another true-device install check.
-- Apple Distribution signing:
-  - Not available locally.
-  - Local signing identities need to be regenerated from the personal Apple Developer account.
-- Developer ID signing for public Mac download:
-  - Not available locally.
-  - Current Mac zip is ad-hoc signed and rejected by Gatekeeper policy for public distribution.
+- App Store upload:
+  - App Store Connect app record and App Store provisioning profiles are still external/account-owner steps.
+- Developer ID notarization for public Mac download:
+  - Developer ID signing is available locally, but notarization still needs App Store Connect notary credentials or an API key.
+  - `spctl` currently rejects the app as `Unnotarized Developer ID`, which is expected before notarization/stapling.
+  - Current public zip should not be released until notarized and stapled.
 
 ## Current Local Signing State
 
 - Team in local config: configured in ignored `ios/Config/Local.xcconfig`
-- Bundle prefix: `com.kai`
-- App Group: `group.com.kai.aiusagewidget`
-- Available local identity:
-  - None after removing the old company-email certificate
+- Bundle prefix: `com.superzhangkai`
+- App Group: `group.com.superzhangkai.aiusagewidget`
+- Available local identities:
+  - Apple Development: Kai Zhang
+  - Apple Distribution: Kai Zhang
+  - Developer ID Application: Kai Zhang
+  - Developer ID Installer: Kai Zhang
 
 ## Notes
 
 - The first `check:appintents:fresh` failed because the icon file timestamp was newer than the unsigned build `Info.plist`.
 - A clean unsigned iPhone build refreshed the outputs and the check passed.
 - This was not a runtime AppIntent bug.
+- Device install evidence is written under `outputs/device-evidence/` and intentionally ignored by git.
+- A later attempt to refresh the install proof saw the iPhone as offline/unavailable through CoreDevice. Unlock/replug/trust the iPhone before the next install or screenshot run.

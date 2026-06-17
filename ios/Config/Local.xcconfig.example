@@ -4,5 +4,5 @@
 // For a free Apple account, use the Personal Team shown by Xcode.
 
 DEVELOPMENT_TEAM =
-PRODUCT_BUNDLE_IDENTIFIER_PREFIX = com.kai
-APP_GROUP_IDENTIFIER = group.com.kai.aiusagewidget
+PRODUCT_BUNDLE_IDENTIFIER_PREFIX = com.superzhangkai
+APP_GROUP_IDENTIFIER = group.com.superzhangkai.aiusagewidget

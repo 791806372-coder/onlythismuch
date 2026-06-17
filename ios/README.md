@@ -21,8 +21,8 @@ cp Config/Local.xcconfig.example Config/Local.xcconfig
 Then fill in:
 
 - `DEVELOPMENT_TEAM`: the Personal Team ID from Xcode. After Xcode account setup, `npm run device:signing:apply` can fill this safely when one Apple Development team is inferable.
-- `PRODUCT_BUNDLE_IDENTIFIER_PREFIX`: a bundle prefix you can sign, for example `com.kai`.
-- `APP_GROUP_IDENTIFIER`: the App Group identifier shared by the app and widget, for example `group.com.kai.aiusagewidget`.
+- `PRODUCT_BUNDLE_IDENTIFIER_PREFIX`: a bundle prefix you can sign, for example `com.superzhangkai`.
+- `APP_GROUP_IDENTIFIER`: the App Group identifier shared by the app and widget, for example `group.com.superzhangkai.aiusagewidget`.
 
 `Config/Local.xcconfig` is intentionally ignored because it is machine-specific.
 

@@ -15,8 +15,8 @@ try {
     path.join(tempRoot, "ios/Config/Local.xcconfig"),
     [
       "DEVELOPMENT_TEAM =",
-      "PRODUCT_BUNDLE_IDENTIFIER_PREFIX = com.kai",
-      "APP_GROUP_IDENTIFIER = group.com.kai.aiusagewidget",
+      "PRODUCT_BUNDLE_IDENTIFIER_PREFIX = com.superzhangkai",
+      "APP_GROUP_IDENTIFIER = group.com.superzhangkai.aiusagewidget",
       ""
     ].join("\n")
   );
