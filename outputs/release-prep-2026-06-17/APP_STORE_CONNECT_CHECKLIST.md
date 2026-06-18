@@ -71,6 +71,6 @@ For localized App Store pages, repeat the same order. Do not put a plain Mac-con
 
 ## External URLs Needed
 
-- Privacy Policy URL: `[TBD]`
-- Support URL: `[TBD]`
-- Mac Connector Download URL: `[TBD]`
+- Privacy Policy URL: `https://github.com/791806372-coder/onlythismuch/blob/main/outputs/release-prep-2026-06-17/PRIVACY_POLICY_DRAFT.md`
+- Support URL: `https://github.com/791806372-coder/onlythismuch/issues`
+- Mac Connector Download URL: `https://github.com/791806372-coder/onlythismuch/releases/tag/mac-connector-v0.1.0-beta.1`

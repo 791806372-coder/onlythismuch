@@ -6,6 +6,8 @@ AI Usage is a local-first WidgetKit app. The iPhone app and widget show sanitize
 
 1. Install the iOS build.
 2. Install AI Usage Connector on a Mac on the same Wi-Fi.
+   - Mac connector download: `https://github.com/791806372-coder/onlythismuch/releases/tag/mac-connector-v0.1.0-beta.1`
+   - The current connector is a developer beta and requires Node.js/npm plus this repository checkout.
 3. Open the Mac connector and show the pairing QR code.
 4. Open the iOS app and scan the QR code.
 5. Tap refresh in the iOS app or widget.

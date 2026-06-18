@@ -34,6 +34,7 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
   - Developer ID signed, notarized, stapled Mac connector bundle.
   - Gatekeeper check passes as `Notarized Developer ID`.
   - Use this for a developer beta GitHub Release asset.
+  - Published prerelease: `https://github.com/791806372-coder/onlythismuch/releases/tag/mac-connector-v0.1.0-beta.1`
 - `SHA256SUMS-notarized.txt`
   - Checksum for the notarized Mac connector zip.
 - `APP_STORE_CONNECT_CHECKLIST.md`

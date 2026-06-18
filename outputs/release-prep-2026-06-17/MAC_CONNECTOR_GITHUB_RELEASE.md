@@ -72,6 +72,11 @@ AI Usage Connector pairs your Mac with the AI Usage iPhone app and WidgetKit wid
 
 This workspace is now pushed to the GitHub repository. The notarized zip can be uploaded as a developer beta release asset.
 
+Created prerelease:
+
+- `https://github.com/791806372-coder/onlythismuch/releases/tag/mac-connector-v0.1.0-beta.1`
+- Asset digest reported by GitHub: `sha256:704637b980e6cc4431c0e9bb5e0c184242ee40d988a32dab20977febf0ac43ee`
+
 Once a repo exists and GitHub CLI is authenticated, the command shape is:
 
 ```sh
