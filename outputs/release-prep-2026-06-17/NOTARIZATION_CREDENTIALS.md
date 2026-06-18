@@ -7,7 +7,7 @@ Mac public distribution needs Apple notarization after Developer ID signing. Thi
 - `Developer ID Application: Kai Zhang (5MXZ674CA6)` is available locally.
 - `Apple Distribution: Kai Zhang (5MXZ674CA6)` is available locally.
 - The login Keychain did not allow non-interactive credential storage from the background session.
-- A temporary unlocked Keychain at `build/aiusage-notary.keychain-db` was used successfully for the 2026-06-18 notarization run.
+- A temporary unlocked Keychain at `build/aiusage-notary.keychain-db` was used successfully for the 2026-06-18 notarization run, then removed after the app was stapled.
 - Apple accepted submission `63254f12-66da-4124-ba1b-bb9c58b74c97`, and the app was stapled and accepted by Gatekeeper.
 
 ## Recommended Credential Path
