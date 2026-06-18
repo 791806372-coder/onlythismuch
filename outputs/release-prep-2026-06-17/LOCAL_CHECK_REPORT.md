@@ -1,6 +1,7 @@
 # Local Check Report
 
 Run date: 2026-06-17
+Updated: 2026-06-18
 
 ## Passed
 
@@ -43,6 +44,9 @@ Run date: 2026-06-17
   - Upload to App Store Connect succeeded; Apple is processing the package.
 - Developer ID Mac signing: `AIUW_CODESIGN_IDENTITY="Developer ID Application: Kai Zhang (5MXZ674CA6)" npm run mac:verify`
   - Signed `AIUsageConnector.app` with Developer ID Application.
+  - Rechecked on 2026-06-18 after adding Hardened Runtime.
+  - `codesign -dv --verbose=4` now reports `flags=0x10000(runtime)`.
+  - `CFBundleShortVersionString` is `0.1.0` and `CFBundleVersion` is `1`.
 
 ## Failed / Blocked
 
@@ -54,6 +58,10 @@ Run date: 2026-06-17
   - `xcrun notarytool history --keychain-profile AIUsageNotary` currently reports no saved keychain item.
   - `spctl` currently rejects the app as `Unnotarized Developer ID`, which is expected before notarization/stapling.
   - Current public zip should not be released until notarized and stapled.
+- Mac connector standalone packaging:
+  - The current Mac app still shells out to repo/npm commands and locates the workspace root.
+  - Treat this as a public-release blocker unless the GitHub release is explicitly labeled developer/beta and requires Node plus this repo checkout.
+  - A normal public connector should bundle or install the connector runtime so users can unzip/move the app without a source checkout.
 
 ## Current Local Signing State
 

@@ -25,6 +25,16 @@ AIUW_CODESIGN_IDENTITY="Developer ID Application: Kai Zhang (5MXZ674CA6)" npm ru
 
 Then zip, notarize, staple, and checksum.
 
+## Save Notarization Credentials
+
+Create an Apple ID app-specific password in your Apple Account, then run:
+
+```sh
+scripts/setup-notary-profile.sh
+```
+
+This saves a local Keychain profile named `AIUsageNotary` without putting the password in shell history.
+
 ## Create Zip
 
 ```sh
@@ -36,7 +46,7 @@ shasum -a 256 outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-n
 
 ```sh
 xcrun notarytool submit outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip \
-  --keychain-profile "<profile>" \
+  --keychain-profile AIUsageNotary \
   --wait
 
 xcrun stapler staple mac/AIUsageConnector/dist/AIUsageConnector.app

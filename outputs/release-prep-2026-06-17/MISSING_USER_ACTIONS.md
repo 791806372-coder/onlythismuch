@@ -52,6 +52,7 @@
    - Use `xcrun notarytool` with App Store Connect credentials or a key.
    - Staple the accepted ticket before publishing.
    - Current local state: `AIUsageNotary` is not saved in Keychain yet.
+   - Use `outputs/release-prep-2026-06-17/NOTARIZATION_CREDENTIALS.md` and `scripts/setup-notary-profile.sh` to save the credential without exposing the password.
 
 4. Publish the connector.
    - Recommended: GitHub Release first.

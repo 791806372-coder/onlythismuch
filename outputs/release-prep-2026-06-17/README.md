@@ -39,6 +39,8 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
   - GitHub Release draft and upload checklist.
 - `MAC_CONNECTOR_INSTALL.md`
   - User-facing Mac connector install guide.
+- `NOTARIZATION_CREDENTIALS.md`
+  - How to create and save the local Apple notarization credential profile without exposing passwords.
 - `MISSING_USER_ACTIONS.md`
   - Things only you/account owner can do.
 - `LOCAL_CHECK_REPORT.md`
@@ -59,4 +61,4 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
 
 ## Release Stance
 
-The iOS app now installs on the connected iPhone, archives as version `1.0` build `2`, exports as an App Store Connect IPA, and uploads successfully to App Store Connect. The remaining iOS release work is App Store Connect listing metadata, App Store screenshots, app privacy, review contact info, build selection after Apple processing, and final submission. Screenshot order should lead with the playful usage/dashboard/widget surfaces, not a plain setup intro. The Mac connector can be Developer ID signed locally, but public download still requires notarization credentials, stapling, and a GitHub Release asset.
+The iOS app now installs on the connected iPhone, archives as version `1.0` build `2`, exports as an App Store Connect IPA, and uploads successfully to App Store Connect. The remaining iOS release work is App Store Connect listing metadata, App Store screenshots, app privacy, review contact info, build selection after Apple processing, and final submission. Screenshot order should lead with the playful usage/dashboard/widget surfaces, not a plain setup intro. The Mac connector can be Developer ID signed locally with Hardened Runtime, but public download still requires notarization credentials, stapling, a GitHub Release asset, and either bundled connector runtime packaging or an explicit developer-only beta requirement.

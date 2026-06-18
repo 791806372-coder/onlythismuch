@@ -5,6 +5,8 @@ MODE="${1:-run}"
 APP_NAME="AIUsageConnector"
 BUNDLE_ID="com.superzhangkai.aiusage.connector"
 MIN_SYSTEM_VERSION="13.0"
+MARKETING_VERSION="${AIUW_MAC_MARKETING_VERSION:-0.1.0}"
+BUNDLE_VERSION="${AIUW_MAC_BUILD_VERSION:-1}"
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 REPO_ROOT="$(cd "$ROOT_DIR/../.." && pwd)"
@@ -46,6 +48,10 @@ cat >"$INFO_PLIST" <<PLIST
   <string>$APP_NAME</string>
   <key>CFBundleIdentifier</key>
   <string>$BUNDLE_ID</string>
+  <key>CFBundleShortVersionString</key>
+  <string>$MARKETING_VERSION</string>
+  <key>CFBundleVersion</key>
+  <string>$BUNDLE_VERSION</string>
   <key>CFBundleIconFile</key>
   <string>AppIcon</string>
   <key>CFBundleDisplayName</key>
@@ -73,7 +79,12 @@ cat >"$INFO_PLIST" <<PLIST
 </plist>
 PLIST
 
-codesign --force --deep --sign "${AIUW_CODESIGN_IDENTITY:--}" "$APP_BUNDLE" >/dev/null
+SIGN_IDENTITY="${AIUW_CODESIGN_IDENTITY:--}"
+CODESIGN_ARGS=(--force --deep --sign "$SIGN_IDENTITY")
+if [[ "$SIGN_IDENTITY" != "-" ]]; then
+  CODESIGN_ARGS+=(--options runtime)
+fi
+codesign "${CODESIGN_ARGS[@]}" "$APP_BUNDLE" >/dev/null
 
 open_app() {
   AIUW_REPO_ROOT="${AIUW_REPO_ROOT:-$REPO_ROOT}" /usr/bin/open -n "$APP_BUNDLE"

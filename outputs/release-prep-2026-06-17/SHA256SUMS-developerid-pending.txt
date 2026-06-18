@@ -1,1 +1,1 @@
-86facedbc2024344f94e5e174bb3e08732a829b364719b7c2a90007defe67d81  outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarization-pending-0.1.0.zip
+e1013f031cc83a4201b90c12b934a6361f1f57d1bdef4a819d49855bb984d39b  outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarization-pending-0.1.0.zip
