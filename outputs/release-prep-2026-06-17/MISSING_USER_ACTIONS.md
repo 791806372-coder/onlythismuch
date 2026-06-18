@@ -40,24 +40,16 @@
 
 ## Must Do Before Public Mac Connector Download
 
-1. Use the Developer ID Application certificate.
-   - The personal Developer ID Application identity is now available locally.
-   - Needed for a direct-download Mac app outside the Mac App Store.
+1. Decide whether the first Mac connector release is developer beta or normal public download.
+   - Completed: Developer ID signing, Hardened Runtime, notarization, stapling, and Gatekeeper validation.
+   - Current notarized asset: `outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip`
+   - Current blocker for a normal public download: the Mac app still shells out to repo/npm paths and needs this repository checkout.
+   - It can be published as a developer beta if the release notes clearly say Node.js/npm plus this repository checkout are required.
 
-2. Sign the Mac app with Developer ID.
-   - Example shape:
-     - `AIUW_CODESIGN_IDENTITY="Developer ID Application: <Name> (<TEAMID>)" npm run mac:verify`
-
-3. Notarize and staple.
-   - Use `xcrun notarytool` with App Store Connect credentials or a key.
-   - Staple the accepted ticket before publishing.
-   - Current local state: `AIUsageNotary` is not saved in Keychain yet.
-   - Use `outputs/release-prep-2026-06-17/NOTARIZATION_CREDENTIALS.md` and `scripts/setup-notary-profile.sh` to save the credential without exposing the password.
-
-4. Publish the connector.
+2. Publish the connector.
    - Recommended: GitHub Release first.
    - The current workspace is pushed to the GitHub repo.
-   - Public release upload should wait for a notarized Developer ID zip.
+   - Developer beta release upload can use the notarized Developer ID zip.
 
 ## Optional But Useful
 

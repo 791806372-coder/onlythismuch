@@ -27,6 +27,15 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
   - Generated for notarization input only; not ready for public release until accepted and stapled.
 - `SHA256SUMS-developerid-pending.txt`
   - Checksum for the Developer ID signed, not-yet-notarized zip.
+- `AIUsageConnector-mac-developerid-clean-0.1.0.zip`
+  - Clean notarization input without AppleDouble/resource-fork sidecar files.
+  - Apple notarization accepted this package.
+- `AIUsageConnector-mac-developerid-notarized-0.1.0.zip`
+  - Developer ID signed, notarized, stapled Mac connector bundle.
+  - Gatekeeper check passes as `Notarized Developer ID`.
+  - Use this for a developer beta GitHub Release asset.
+- `SHA256SUMS-notarized.txt`
+  - Checksum for the notarized Mac connector zip.
 - `APP_STORE_CONNECT_CHECKLIST.md`
   - What to fill in App Store Connect.
 - `APP_STORE_METADATA_DRAFT.md`
@@ -61,4 +70,4 @@ This folder is the handoff for the iOS App Store path plus the Mac connector dir
 
 ## Release Stance
 
-The iOS app now installs on the connected iPhone, archives as version `1.0` build `2`, exports as an App Store Connect IPA, and uploads successfully to App Store Connect. The remaining iOS release work is App Store Connect listing metadata, App Store screenshots, app privacy, review contact info, build selection after Apple processing, and final submission. Screenshot order should lead with the playful usage/dashboard/widget surfaces, not a plain setup intro. The Mac connector can be Developer ID signed locally with Hardened Runtime, but public download still requires notarization credentials, stapling, a GitHub Release asset, and either bundled connector runtime packaging or an explicit developer-only beta requirement.
+The iOS app now installs on the connected iPhone, archives as version `1.0` build `2`, exports as an App Store Connect IPA, and uploads successfully to App Store Connect. The remaining iOS release work is App Store Connect listing metadata, App Store screenshots, app privacy, review contact info, build selection after Apple processing, and final submission. Screenshot order should lead with the playful usage/dashboard/widget surfaces, not a plain setup intro. The Mac connector is now Developer ID signed with Hardened Runtime, notarized, stapled, and accepted by Gatekeeper. It can be used as a GitHub Release developer-beta asset, but a normal public download still needs bundled standalone connector runtime packaging or a very clear Node.js/repo-checkout requirement.

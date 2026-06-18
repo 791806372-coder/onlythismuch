@@ -2,9 +2,9 @@
 
 ## Recommendation
 
-Use GitHub Releases for the Mac connector first, but only publish a public release after Developer ID signing and notarization. The current zip in this folder is ad-hoc signed and suitable for internal validation only.
+Use GitHub Releases for the Mac connector first. The current Developer ID build is signed, notarized, stapled, and Gatekeeper-accepted, but should still be positioned as a developer beta until the connector runtime no longer depends on this repository checkout.
 
-Current blocker: the Mac app still depends on repo/npm paths. Do not publish it as a normal end-user download until the connector runtime is bundled or the release is explicitly positioned as a developer-only beta that requires Node.js and this repository checkout.
+Current blocker: the Mac app still depends on repo/npm paths. Do not publish it as a normal end-user download until the connector runtime is bundled, or make the release explicitly developer-only and say it requires Node.js plus this repository checkout.
 
 ## Release Title
 
@@ -21,16 +21,25 @@ Internal/private only:
 - `AIUsageConnector-mac-adhoc-0.1.0.zip`
 - `SHA256SUMS.txt`
 
-Public release should instead use:
+Developer beta release should use:
 
 - `AIUsageConnector-mac-developerid-notarized-0.1.0.zip`
-- `SHA256SUMS.txt`
+- `SHA256SUMS-notarized.txt`
 
-Do not create the public asset until:
+Checksum:
+
+```text
+704637b980e6cc4431c0e9bb5e0c184242ee40d988a32dab20977febf0ac43ee  AIUsageConnector-mac-developerid-notarized-0.1.0.zip
+```
+
+Completed:
 
 - The app is signed with Developer ID and Hardened Runtime.
 - Apple notarization is accepted.
 - The accepted app is stapled.
+
+Still required before a normal public asset:
+
 - The connector no longer depends on a local source checkout, or the release notes clearly state the developer-only dependency.
 
 ## Release Notes
@@ -57,18 +66,18 @@ AI Usage Connector pairs your Mac with the AI Usage iPhone app and WidgetKit wid
 
 - macOS 13 or later.
 - iPhone and Mac on the same Wi-Fi for v1.
-- For the current developer beta only: Node.js/npm and this repository checkout are still required.
+- For this developer beta: Node.js/npm and this repository checkout are still required.
 
 ## GitHub Upload Path
 
-This workspace is now pushed to the GitHub repository. Public release upload should wait until the Mac app is signed with Developer ID, notarized, and stapled.
+This workspace is now pushed to the GitHub repository. The notarized zip can be uploaded as a developer beta release asset.
 
 Once a repo exists and GitHub CLI is authenticated, the command shape is:
 
 ```sh
 gh release create mac-connector-v0.1.0-beta.1 \
   outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip \
-  outputs/release-prep-2026-06-17/SHA256SUMS.txt \
+  outputs/release-prep-2026-06-17/SHA256SUMS-notarized.txt \
   --title "AI Usage Connector for macOS 0.1.0 beta" \
   --notes-file outputs/release-prep-2026-06-17/MAC_CONNECTOR_GITHUB_RELEASE.md
 ```

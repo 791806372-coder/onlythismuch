@@ -38,8 +38,13 @@ This saves a local Keychain profile named `AIUsageNotary` without putting the pa
 ## Create Zip
 
 ```sh
-ditto -c -k --keepParent mac/AIUsageConnector/dist/AIUsageConnector.app outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip
-shasum -a 256 outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip > outputs/release-prep-2026-06-17/SHA256SUMS.txt
+COPYFILE_DISABLE=1 ditto -c -k --norsrc --noextattr --keepParent \
+  mac/AIUsageConnector/dist/AIUsageConnector.app \
+  outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip
+
+shasum -a 256 \
+  outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip \
+  > outputs/release-prep-2026-06-17/SHA256SUMS-notarized.txt
 ```
 
 ## Notarization Shape
@@ -52,6 +57,8 @@ xcrun notarytool submit outputs/release-prep-2026-06-17/AIUsageConnector-mac-dev
 xcrun stapler staple mac/AIUsageConnector/dist/AIUsageConnector.app
 spctl -a -vv mac/AIUsageConnector/dist/AIUsageConnector.app
 ```
+
+If the login Keychain blocks non-interactive storage, create a temporary unlocked Keychain and pass it with `--keychain`. Do not put the app-specific password in shell history.
 
 ## iOS Archive Shape
 

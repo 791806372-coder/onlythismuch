@@ -6,7 +6,9 @@ Mac public distribution needs Apple notarization after Developer ID signing. Thi
 
 - `Developer ID Application: Kai Zhang (5MXZ674CA6)` is available locally.
 - `Apple Distribution: Kai Zhang (5MXZ674CA6)` is available locally.
-- `AIUsageNotary` is not saved in Keychain yet.
+- The login Keychain did not allow non-interactive credential storage from the background session.
+- A temporary unlocked Keychain at `build/aiusage-notary.keychain-db` was used successfully for the 2026-06-18 notarization run.
+- Apple accepted submission `63254f12-66da-4124-ba1b-bb9c58b74c97`, and the app was stapled and accepted by Gatekeeper.
 
 ## Recommended Credential Path
 
@@ -31,6 +33,23 @@ Verify:
 xcrun notarytool history --keychain-profile AIUsageNotary
 ```
 
+If the login Keychain rejects storage with `User interaction is not allowed`, use a temporary Keychain for the current release run:
+
+```sh
+KC="$PWD/build/aiusage-notary.keychain-db"
+KC_PASS="$(openssl rand -base64 32)"
+security create-keychain -p "$KC_PASS" "$KC"
+security set-keychain-settings -lut 21600 "$KC"
+security unlock-keychain -p "$KC_PASS" "$KC"
+xcrun notarytool store-credentials AIUsageNotary \
+  --keychain "$KC" \
+  --apple-id superzhangkai@vip.qq.com \
+  --team-id 5MXZ674CA6 \
+  --validate
+```
+
+Then pass the same `--keychain "$KC"` option to `notarytool submit`, `info`, or `history`. Do not store the app-specific password in shell history or docs.
+
 ## Alternative Credential Path
 
 An App Store Connect API key also works, but it creates another long-lived private key file that must be protected. Use it later if CI needs unattended notarization. For this Mac, the app-specific password path is simpler.
@@ -40,8 +59,9 @@ An App Store Connect API key also works, but it creates another long-lived priva
 Submit the Developer ID signed zip:
 
 ```sh
-xcrun notarytool submit outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarization-pending-0.1.0.zip \
+xcrun notarytool submit outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-clean-0.1.0.zip \
   --keychain-profile AIUsageNotary \
+  --keychain "$PWD/build/aiusage-notary.keychain-db" \
   --wait
 ```
 

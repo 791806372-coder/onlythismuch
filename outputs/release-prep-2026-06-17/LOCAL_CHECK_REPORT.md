@@ -47,17 +47,18 @@ Updated: 2026-06-18
   - Rechecked on 2026-06-18 after adding Hardened Runtime.
   - `codesign -dv --verbose=4` now reports `flags=0x10000(runtime)`.
   - `CFBundleShortVersionString` is `0.1.0` and `CFBundleVersion` is `1`.
+- Developer ID notarization:
+  - Apple notarization accepted submission `63254f12-66da-4124-ba1b-bb9c58b74c97` on 2026-06-18.
+  - The accepted input was the clean zip `AIUsageConnector-mac-developerid-clean-0.1.0.zip`.
+  - `xcrun stapler staple mac/AIUsageConnector/dist/AIUsageConnector.app` succeeded.
+  - `xcrun stapler validate mac/AIUsageConnector/dist/AIUsageConnector.app` succeeded.
+  - `spctl -a -vv mac/AIUsageConnector/dist/AIUsageConnector.app` now reports `accepted`, `source=Notarized Developer ID`.
 
 ## Failed / Blocked
 
 - App Store submission:
   - App Store Connect app record exists as `AI Widget Usage`.
   - Build upload succeeded, but the build still needs Apple processing, screenshots, metadata, privacy answers, review contact info, and final manual submission.
-- Developer ID notarization for public Mac download:
-  - Developer ID signing is available locally, but notarization still needs App Store Connect notary credentials or an API key.
-  - `xcrun notarytool history --keychain-profile AIUsageNotary` currently reports no saved keychain item.
-  - `spctl` currently rejects the app as `Unnotarized Developer ID`, which is expected before notarization/stapling.
-  - Current public zip should not be released until notarized and stapled.
 - Mac connector standalone packaging:
   - The current Mac app still shells out to repo/npm commands and locates the workspace root.
   - Treat this as a public-release blocker unless the GitHub release is explicitly labeled developer/beta and requires Node plus this repo checkout.
@@ -81,3 +82,4 @@ Updated: 2026-06-18
 - This was not a runtime AppIntent bug.
 - Device install evidence is written under `outputs/device-evidence/` and intentionally ignored by git.
 - The iPhone is currently visible again through CoreDevice and the latest app was installed successfully.
+- The first notarization submission `840c8f0f-a5f7-45ed-99e4-a486fe44ce2a` stayed `In Progress` for a long time. A clean zip without AppleDouble/resource-fork sidecar files was submitted and accepted quickly.

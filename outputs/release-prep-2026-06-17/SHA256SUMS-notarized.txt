@@ -1,0 +1,1 @@
+704637b980e6cc4431c0e9bb5e0c184242ee40d988a32dab20977febf0ac43ee  outputs/release-prep-2026-06-17/AIUsageConnector-mac-developerid-notarized-0.1.0.zip
